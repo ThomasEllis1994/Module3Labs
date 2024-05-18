@@ -170,10 +170,16 @@ let car = {
     },
 };
 car.description(); //works
-setTimeout(car.description, 200); //fails
+//setTimeout(car.description, 200); //fails//fails becuase setTimeout takes a function as its first variable
+
+setTimeout(function () {
+    car.description();
+}, 1000); //fixed
 
 /*
-    
+//6
+//7
+//8
     
     
     
@@ -196,3 +202,4 @@ function randomDelay() {
 randomDelay()
     .then((delay) => console.log(`There seems to be a delay of ${delay}`))
     .catch(() => console.log("failed Delay"));
+//10
